@@ -1,9 +1,9 @@
 package ImageHoster.model;
 
-import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import javax.persistence.*;
 
 
 //@Entity annotation specifies that the corresponding class is a JPA entity
@@ -50,6 +50,9 @@ public class Image {
     //Since the mapping is Many to Many, a new table will be generated containing the two columns both referencing to the primary key of both the tables ('images', 'tags')
     @ManyToMany(fetch = FetchType.LAZY)
     private List<Tag> tags = new ArrayList<>();
+
+    @OneToMany(mappedBy = "image", cascade = CascadeType.REMOVE, fetch = FetchType.LAZY)
+    private List<Comment> comments = new ArrayList<>();
 
     public Image() {
     }
@@ -125,5 +128,19 @@ public class Image {
 
     public void setTags(List<Tag> tags) {
         this.tags = tags;
+    }
+
+    /**
+     * @return the comments
+     */
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    /**
+     * @param comments the comments to set
+     */
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
     }
 }

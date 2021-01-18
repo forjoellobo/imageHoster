@@ -1,7 +1,7 @@
-/*
 package ImageHoster.controller;
 
 import ImageHoster.service.ImageService;
+import static org.hamcrest.CoreMatchers.containsString;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,8 +10,6 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.mock.web.MockHttpSession;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
-
-import static org.hamcrest.CoreMatchers.containsString;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
@@ -36,4 +34,3 @@ public class HomeControllerTest {
                 .andExpect(content().string(containsString("Image Hoster")));
     }
 }
-*/

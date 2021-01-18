@@ -1,1 +1,1 @@
-# imageHoster
+# ImageHosterApplication
